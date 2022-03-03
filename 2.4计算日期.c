@@ -19,7 +19,7 @@ int main()
     int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     int rst = 0;
-    if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0 && m >= 3)
+    if ((y % 4 == 0 && y % 100 != 0 || y % 400 == 0) && m >= 3)
     {
         ++rst;
     }
@@ -27,7 +27,7 @@ int main()
     {
         rst += days[m - 2];
     }
-    printf("%d", rst);
+    printf("%d", rst + d);
     return 0;
 }
 
