@@ -9,23 +9,23 @@ int main()
 {
     char s[DATE_MAX_LEN] = {0};
     scanf("%s", s);
-    int n = DATE_MAX_LEN - 1;
-    for (; s[n] != '\0'; n--){};
+    int n = 0;
+    for (; s[n] != '\0'; n++){};
     int y, m, d;
-    y = strtoi(s, s + n);
+    y = strtoi(s, s + n - 4);
     m = strtoi(s + n - 4, s + n - 2);
     d = strtoi(s + n - 2, s + n);
 
-    int days[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int days[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     int rst = 0;
     if (y % 4 == 0 && y % 100 != 0 || y % 400 == 0 && m >= 3)
     {
         ++rst;
     }
-    for (; m > 0; m--)
+    for (; m > 1; m--)
     {
-        rst += days[m - 1];
+        rst += days[m - 2];
     }
     printf("%d", rst);
     return 0;
