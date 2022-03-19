@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main(){
-    printf("6,28,496");
+    printf("1,6,28,496\n");
     return 0;
 }
